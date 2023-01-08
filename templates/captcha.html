@@ -1,0 +1,26 @@
+<div class="captcha">
+    <h3>Simple Captcha</h3>
+    <canvas id="captcha-text">captcha text</canvas>
+    <label for="captcha-input">Captcha: </label>
+    <input type="text" name="text" id="captcha-input">
+    <button id="captcha-submit" type="submit">Submit</button>
+    <button id="captcha-refresh" type="submit">Refresh</button>
+    <div id="captcha-output" class=""></div>
+</div>
+
+<script>
+
+document.querySelector('form').addEventListener('submit', function(e) {
+	if (validateCaptcha()) {
+			e.preventDefault();
+			window.alert('A valid captcha is required.');
+	}
+});
+
+document.querySelector('form').addEventListener('submit', function(e) {
+		if (validateCaptcha()) {
+				e.preventDefault();
+				window.alert('A valid captcha is required.');
+		}
+});
+</script>

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block pre_scripts %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}" />
+{% endblock %}
+
+{% block title %}Register{% endblock %}
+{% block header %}<h1>Register</h1>{% endblock %}
+
+{% block content %}
+<form method="POST" action="/register">
+	<label for="first-name">First Name: </label>
+	<input name="first-name" id="first-name" autocomplete="given-name" required>
+	
+	<label for="last-name">Last Name: </label>
+	<input name="last-name" id="last-name" autocomplete="family-name" required>
+	
+	<label for="email">Email: </label>
+	<input name="email" id="email" type="email" autocomplete="email" required>
+	
+	<label for="username">Username: </label>
+	<input name="username" id="username" autocomplete="username" required>
+	
+	<label for="password">Password: </label>
+	<input type="password" name="password" id="password" autocomplete="password" required>
+	
+	<label for="verify-password">Retype Password: </label>
+	<input type="password" name="verify-password" id="verify-password" autocomplete="off" required>
+	
+	<div class="form-status"></div>
+	
+	<br>
+	<button type="submit">Submit</button>
+</form>
+{% endblock %}
+
+{% block post_scripts %}
+<script src="{{ url_for('static', filename='js/captcha.js') }}"></script>
+<script>
+	captchas();
+</script>
+{% endblock %}

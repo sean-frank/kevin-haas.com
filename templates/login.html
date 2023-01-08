@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block pre_scripts %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}" />
+{% endblock %}
+
+{% block title %}Login{% endblock %}
+{% block header %}<h1>Login</h1>{% endblock %}
+
+{% block content %}
+<form method="POST" action="/login">
+    <label for="username">User:</label>
+    <input type="text" name="username" id="username" placeholder="Username">
+	
+    <label for="password">Password:</label>
+    <input name="password" placeholder="Password" id="password" type="password" required>
+	
+	<br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Bored{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row mb-2">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<article class="blog-post">
+				<h2 class="blog-post-title mb-1">{{ data["type"].capitalize() }}</h2>
+				<p class="blog-post-meta">Activity ID: <a href="/bored?key={{ data['key'] }}">{{ data['key'] }}</a></p>
+				
+				<p>
+					<b>Activity</b>: {{ data["activity"] }}.
+					<br>
+					{% if 'link' in data and data['link'] %}
+						For more information <a href="{{ data['link'] }}">click here</a>.
+					{% else %}
+						<i>No link available.</i>
+					{% endif %}
+				</p>
+				
+				<ul>
+					<li><b>Participants</b>: {% if data["participants"] == 1 %} {{data["participants"]}} person {% else %} {{data["participants"]}} people {% endif %} can do this activity.</li>
+					<li><b>Price</b>: {% if data["price"] == 0 %} Free {% else %} {{ data["price_rating"] }} / 10 {% endif %}</li>
+					
+					<li><b>Accessibility</b>: {% if data["accessibility_rating"] == 0 %} Openly Accessible {% else %} {{ data["accessibility_rating"] }} / 10 Accessibility {% endif %}</li>
+				</ul>
+				
+				<p><a href="/bored?type={{ data['type'] }}&accessibility={{ data['accessibility'] }}&participants={{ data['participants'] }}&price={{ data['price'] }}">Get more like this...</a></p>
+			</article>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>
+{% endblock %}

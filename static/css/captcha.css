@@ -1,0 +1,30 @@
+.captcha {
+    display: block;
+    margin: auto;
+    margin-bottom: 1em;
+    border: 1px solid black;
+    padding: 0.25em 1em;
+}
+.captcha>h3 {
+    margin: 0;
+    padding: 0;
+}
+.captcha>label {
+    display: block;
+}
+.captcha canvas {
+    margin: auto;
+    align-items: center;
+}
+.captcha #captcha-output[class=""] {
+    display: none;
+}
+.captcha #captcha-output {
+    padding: 0.75em 0em;
+}
+.captcha #captcha-output.captcha-incorrect {
+    color: red;
+}
+.captcha #captcha-output.captcha-correct {
+    color: green;
+}

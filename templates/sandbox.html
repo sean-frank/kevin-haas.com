@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Sandbox{% endblock %}
+{% block styles %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css" integrity="sha512-A5PKBHoJQHdKjxpwyV+VhMsK7L3MMV1Ch2++rS0bn3xX8+5qJb3WpPvwJH1eqb6iMRtotfiOO7Jhl1qQ02Rwuw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+{% block pre_scripts %}{% endblock %}
+
+{% block header %}
+    <h1>Sandbox</h1>
+{% endblock %}
+
+{% block content %}
+	<h3>Packages Pre-Included</h3>
+	<ul>
+		<li><a target="_blank" href="https://momentjs.com/">moment</a></li>
+		<li><a target="_blank" href="https://jquery.com/">jquery</a></li>
+		<li><a target="_blank" href="https://api.jqueryui.com/">jquery-ui</a></li>
+		<li><a target="_blank" href="https://fontawesome.com/">fontawesome</a></li>
+		<li><a target="_blank" href="https://animate.style/">animate.css</a> - Plug and play, app-like animations for your websites and web apps</li>
+		<li><a target="_blank" href="http://threejs.org/">threejs</a> - JavaScript 3D library</li>
+		<li><a target="_blank" href="https://revealjs.com/">reveal.js</a> - The HTML Presentation Framework</li>
+		<li><a target="_blank" href="https://www.chartjs.org/">chart.js</a> - Simple HTML5 charts using the canvas element</li>
+		<li><a target="_blank" href="https://d3js.org/">d3js</a> - A JavaScript visualization library for HTML and SVG</li>
+		<li>Search for more on <a href="https://cdnjs.com/libraries/">cdnjs</a>.</li>
+	</ul>
+	
+	<div class="content">
+		As of this moment, the sandbox environment is merely a playground for 
+		me to test out new packages and features.
+		<br />
+		<br />
+		It's not meant to be a user friendly environment, but if you're
+		interested in using this, open the Console and poke around.
+		<br />
+		<br />
+		The variable <code>content</code> is a jQuery object that contains the 
+		content of this block.
+	</div>
+{% endblock %}
+
+{% block post_scripts %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js" integrity="sha512-y2j3xEERQApzRH8Rl1bPspQks1/wEsJ8P0pcNQdq7L+G3tT+U5wFjKoxwQNePdnvarg/zamz05jlHDlB5IAeXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.7.0/d3.min.js" integrity="sha512-7RUyhA5mpSkxSGGdw1vL6ZLL2GzWPvf/aQ4M8cpXkZiSpCvWb5rgygK+VzUpyXx4vPc0ahrS53nymFbGOQ7ubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.147.0/three.min.js" integrity="sha512-GWXLkqxMENYgBdQvA/lTeOV+R2auhasgKQxjMTWBFt3Z6GJVZ9owiyAMOzz0Wt6J1ri8bf/g2kHJV0uvWpJTuw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+		var content = $('.content');
+	</script>
+{% endblock %}
