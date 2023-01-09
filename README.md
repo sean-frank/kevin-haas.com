@@ -51,7 +51,7 @@ $
 ```bash
 $ . venv/bin/activate
 (venv) $ pip3 install --upgrade pip
-(venv) $ pip3 install Flask Flask-SQLAlchemy Flask-Login Flask-Caching
+(venv) $ pip3 install Flask Flask-SQLAlchemy Flask-Login Flask-Caching python-dotenv requests
 ```
 
 
