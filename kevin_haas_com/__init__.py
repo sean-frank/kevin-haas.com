@@ -51,10 +51,16 @@ login_manager.init_app(app)
 
 #app.app_context().push()
 
+from kevin_haas_com.routes.index import base_routes
+from kevin_haas_com.routes.auth import auth_routes
+from kevin_haas_com.routes.tests import test_routes
+from kevin_haas_com.routes.apis import api_routes
 
+app.register_blueprint(base_routes)
+app.register_blueprint(auth_routes)
+app.register_blueprint(test_routes)
+app.register_blueprint(api_routes)
 
-#from kevin_haas_com import routes
-from kevin_haas_com.routes import *
 
 if __name__ == '__main__':
 	app.run(

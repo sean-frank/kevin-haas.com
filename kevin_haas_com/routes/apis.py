@@ -1,13 +1,10 @@
 import requests
-from random import getrandbits
-from time import sleep
-from flask import Response, Blueprint, render_template, redirect, url_for, request, flash, jsonify
-from kevin_haas_com import app, cache
+from flask import Blueprint, render_template, request, jsonify
 
 
-#apis = Blueprint('apis', __name__)
+api_routes = Blueprint('apis', __name__)
 
-@app.route('/api/joke', methods=['GET'])
+@api_routes.route('/api/joke', methods=['GET'])
 def joke_api():
 	format = request.args.get('format')
 	joke = requests.get('https://v2.jokeapi.dev/joke/Any?lang=en&type=single&&format=json').json()
@@ -21,7 +18,7 @@ def joke_api():
 def starify(value):
 	return value.replace(' ', '*')
 
-@app.route('/api/bored', methods=['GET'])
+@api_routes.route('/api/bored', methods=['GET'])
 def bored_api():
 	format = request.args.get('format')
 	res = requests.get('https://www.boredapi.com/api/activity',
